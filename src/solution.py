@@ -1,3 +1,5 @@
+import json
+
 import matplotlib.pyplot as plt
 import networkx as nx
 
@@ -97,39 +99,51 @@ def resolver_sistema_transporte(
 
 
 def run():
-    # Datos de ejemplo
-    nodos_principales = ["E1", "E2", "E3", "E4"]  # Estaciones
-    nodos_secundarios = ["C1", "C2", "C3"]  # Casas/Destinos
+    with open(
+        "./src/input.json",
+        "r",
+        encoding="utf-8",
+    ) as file:
+        input = json.load(file)
 
-    aristas_hoverboard = [
-        ("C1", "E1", 2),
-        ("C1", "E2", 3),
-        ("C2", "E2", 1),
-        ("C2", "E3", 4),
-        ("C3", "E3", 2),
-        ("C3", "E4", 5),
-    ]
+    primary_nodes = input["nodes"]["primary"]
+    secondary_nodes = input["nodes"]["secondary"]
 
-    aristas_tranvia = [
-        ("E1", "E2", 1),
-        ("E2", "E3", 1),
-        ("E3", "E4", 1),
-        ("E4", "E1", 1),
-    ]
+    edges_hoverboard_raw = input["edges"]["hoverboard"]
 
-    k1 = 10  # Costo por km en hoverboard
-    k2 = 20  # Costo por tramo en tranvía
+    edges_hoverboard = []
 
-    pares_od = [("C1", "C3"), ("C2", "C1"), ("C3", "C2")]
+    for edge in edges_hoverboard_raw:
+        origin = edge["origin"]
+        destiny = edge["destiny"]
+        distance = edge["distance"]
+        edges_hoverboard.append((origin, destiny, distance))
+
+    edges_tram_raw = input["edges"]["tram"]
+
+    edges_tram = []
+
+    for edge in edges_tram_raw:
+        origin = edge["origin"]
+        destiny = edge["destiny"]
+        distance = edge["distance"]
+        edges_tram.append((origin, destiny, distance))
+
+    cost_per_kilometer = input["cost_per_kilometer"]
+    k1 = cost_per_kilometer["hoverboard"]
+    k2 = cost_per_kilometer["tram"]
+
+    pairs = []
+
+    pairs_raw = input["pairs"]
+
+    for pair in pairs_raw:
+        origin = pair["origin"]
+        destiny = pair["destiny"]
+        pairs.append((origin, destiny))
 
     resolver_sistema_transporte(
-        nodos_principales,
-        nodos_secundarios,
-        aristas_hoverboard,
-        aristas_tranvia,
-        k1,
-        k2,
-        pares_od,
+        primary_nodes, secondary_nodes, edges_hoverboard, edges_tram, k1, k2, pairs
     )
 
 

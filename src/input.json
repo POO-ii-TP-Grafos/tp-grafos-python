@@ -45,7 +45,7 @@
                 "distance": 5
             }
         ],
-        "train": [
+        "tram": [
             {
                 "origin": "E1",
                 "destiny": "E2",
@@ -70,7 +70,7 @@
     },
     "cost_per_kilometer": {
         "hoverboard": 10,
-        "train": 20
+        "tram": 20
     },
     "pairs": [
         {
