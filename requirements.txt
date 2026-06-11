@@ -1,0 +1,6 @@
+# Herramientas útiles para aprender y practicar
+ipython>=8.0
+pytest>=8.0
+# Librerías para grafos y visualización
+networkx>=3.6.1
+matplotlib>=3.10.9
