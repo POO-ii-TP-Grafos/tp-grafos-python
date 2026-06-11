@@ -14,78 +14,58 @@
     },
     "edges": {
         "hoverboard": [
-            [
-                {
-                    "origin": "C1",
-                    "destiny": "E1",
-                    "distance": 2
-                }
-            ],
-            [
-                {
-                    "origin": "C1",
-                    "destiny": "E2",
-                    "distance": 3
-                }
-            ],
-            [
-                {
-                    "origin": "C2",
-                    "destiny": "E2",
-                    "distance": 1
-                }
-            ],
-            [
-                {
-                    "origin": "C2",
-                    "destiny": "E3",
-                    "distance": 4
-                }
-            ],
-            [
-                {
-                    "origin": "C3",
-                    "destiny": "E3",
-                    "distance": 2
-                }
-            ],
-            [
-                {
-                    "origin": "C3",
-                    "destiny": "E4",
-                    "distance": 5
-                }
-            ]
+            {
+                "origin": "C1",
+                "destiny": "E1",
+                "distance": 2
+            },
+            {
+                "origin": "C1",
+                "destiny": "E2",
+                "distance": 3
+            },
+            {
+                "origin": "C2",
+                "destiny": "E2",
+                "distance": 1
+            },
+            {
+                "origin": "C2",
+                "destiny": "E3",
+                "distance": 4
+            },
+            {
+                "origin": "C3",
+                "destiny": "E3",
+                "distance": 2
+            },
+            {
+                "origin": "C3",
+                "destiny": "E4",
+                "distance": 5
+            }
         ],
         "train": [
-            [
-                {
-                    "origin": "E1",
-                    "destiny": "E2",
-                    "distance": 1
-                }
-            ],
-            [
-                {
-                    "origin": "E2",
-                    "destiny": "E3",
-                    "distance": 1
-                }
-            ],
-            [
-                {
-                    "origin": "E3",
-                    "destiny": "E4",
-                    "distance": 1
-                }
-            ],
-            [
-                {
-                    "origin": "E4",
-                    "destiny": "E1",
-                    "distance": 1
-                }
-            ]
+            {
+                "origin": "E1",
+                "destiny": "E2",
+                "distance": 1
+            },
+            {
+                "origin": "E2",
+                "destiny": "E3",
+                "distance": 1
+            },
+            {
+                "origin": "E3",
+                "destiny": "E4",
+                "distance": 1
+            },
+            {
+                "origin": "E4",
+                "destiny": "E1",
+                "distance": 1
+            }
         ]
     },
     "cost_per_kilometer": {
