@@ -94,3 +94,43 @@ def resolver_sistema_transporte(
     plt.title("Red de Transporte Multimodal")
     plt.axis("off")
     plt.show()
+
+
+def run():
+    # Datos de ejemplo
+    nodos_principales = ["E1", "E2", "E3", "E4"]  # Estaciones
+    nodos_secundarios = ["C1", "C2", "C3"]  # Casas/Destinos
+
+    aristas_hoverboard = [
+        ("C1", "E1", 2),
+        ("C1", "E2", 3),
+        ("C2", "E2", 1),
+        ("C2", "E3", 4),
+        ("C3", "E3", 2),
+        ("C3", "E4", 5),
+    ]
+
+    aristas_tranvia = [
+        ("E1", "E2", 1),
+        ("E2", "E3", 1),
+        ("E3", "E4", 1),
+        ("E4", "E1", 1),
+    ]
+
+    k1 = 10  # Costo por km en hoverboard
+    k2 = 20  # Costo por tramo en tranvía
+
+    pares_od = [("C1", "C3"), ("C2", "C1"), ("C3", "C2")]
+
+    resolver_sistema_transporte(
+        nodos_principales,
+        nodos_secundarios,
+        aristas_hoverboard,
+        aristas_tranvia,
+        k1,
+        k2,
+        pares_od,
+    )
+
+
+run()
