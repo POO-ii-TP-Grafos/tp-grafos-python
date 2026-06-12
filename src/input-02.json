@@ -1,0 +1,91 @@
+{
+    "nodes": {
+        "primary": [
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+        ],
+        "secondary": [
+            "A",
+            "G"
+        ]
+    },
+    "edges": {
+        "users": [
+            {
+                "origin": "A",
+                "destiny": "B",
+                "distance": 2
+            },
+            {
+                "origin": "A",
+                "destiny": "C",
+                "distance": 5
+            },
+            {
+                "origin": "B",
+                "destiny": "G",
+                "distance": 100
+            },
+            {
+                "origin": "D",
+                "destiny": "G",
+                "distance": 8
+            },
+            {
+                "origin": "B",
+                "destiny": "C",
+                "distance": 100
+            },
+            {
+                "origin": "C",
+                "destiny": "D",
+                "distance": 3
+            },
+            {
+                "origin": "D",
+                "destiny": "E",
+                "distance": 1
+            },
+            {
+                "origin": "D",
+                "destiny": "F",
+                "distance": 2
+            }
+        ],
+        "tram": [
+            {
+                "origin": "B",
+                "destiny": "C",
+                "distance": 100
+            },
+            {
+                "origin": "C",
+                "destiny": "D",
+                "distance": 3
+            },
+            {
+                "origin": "D",
+                "destiny": "E",
+                "distance": 1
+            },
+            {
+                "origin": "D",
+                "destiny": "F",
+                "distance": 2
+            }
+        ]
+    },
+    "cost_per_kilometer": {
+        "hoverboard": 1,
+        "tram": 1
+    },
+    "pairs": [
+        {
+            "origin": "A",
+            "destiny": "G"
+        }
+    ]
+}
